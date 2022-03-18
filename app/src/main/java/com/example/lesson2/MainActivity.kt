@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.provider.AlarmClock.EXTRA_MESSAGE
 import android.view.View
 import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageView
 
 class MainActivity : AppCompatActivity() {
@@ -13,10 +14,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var button=findViewById<Button>(R.id.button)
-        button.setOnClickListener {
+        val send=findViewById<Button>(R.id.button)
+
+        val name = findViewById<EditText>(R.id.name)
+        val age = findViewById<EditText>(R.id.age)
+
+        send.setOnClickListener {
             val intent = Intent(this, SecondActivity::class.java).apply {
-                putExtra(EXTRA_MESSAGE,"")
+                putExtra("name",name.text.toString())
+                putExtra("age",age.text.toString())
             }
             startActivity(intent)
         }

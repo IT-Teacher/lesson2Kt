@@ -1,18 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
+    <TextView
+        android:id="@+id/tvname"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:textSize="22sp"
+        android:layout_above="@+id/tvage"
+        android:layout_marginBottom="40dp"
+        android:layout_marginStart="40dp"
+        android:labelFor="@+id/name"
+        />
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tvage"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="42dp"
+        android:autofillHints="no" />
+
+    <TextView
+        android:id="@+id/tvage"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:text="Age"
+        android:textSize="22sp"
+        android:layout_marginStart="40dp" />
+    <EditText
+        android:id="@+id/age"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="42dp"
+        android:autofillHints="no" />
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="340dp"
-        android:layout_marginEnd="120dp"
-        android:text="SecondActivity"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:textSize="22sp"
+        android:layout_below="@+id/tvage"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:text="Send"
+         />
+</RelativeLayout>
